@@ -359,6 +359,13 @@ extension MatomoTracker {
 }
 
 extension MatomoTracker {
+    
+    @objc public func trackMedia(action: String, parameters: [String:String]) {
+        track(Event(tracker: self, action: action, customTrackingParameters: parameters))
+    }
+}
+
+extension MatomoTracker {
     /// Set a permanent custom dimension.
     ///
     /// Use this method to set a dimension that will be send with every event. This is best for Custom Dimensions in scope "Visit". A typical example could be any device information or the version of the app the visitor is using.
